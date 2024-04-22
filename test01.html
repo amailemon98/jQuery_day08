@@ -66,12 +66,16 @@
             // css, transition-timming-function
             // css, animate-timming-function
             // ease, ease-in, ease-out
-            $('html, body').animate({scrollTop: top}, 400, "easeOutBounce", function(){
+            $('html, body').stop().animate({scrollTop: top}, 400, "easeOutBounce", function(){
                 $('nav li').removeClass('active');
                 $('nav li').eq(index).addClass('active')
             });
-
         });
+
+        // $('section').eq(0).trigger('mousewheel')
+        // 페이지를 로드할 때 마다 항상 맨위로 올려두기 (초기화)
+        $('html, css').animate({scrollTop: 0});
+        $('nav li').eq(0).addClass('active');
     </script>
 </body>
 </html>
